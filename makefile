@@ -2,14 +2,11 @@ CXX:= clang++
 FLAGS:=-std=c++11
 
 
-cppp: cppp.o main.o
-	$(CXX) $(FLAGS) -lpthread cppp.o main.o -o test
+test: test.o
+	$(CXX) $(FLAGS) -lpthread test.o -o test
 
-main.o: main.cpp
-	$(CXX) $(FLAGS) -c main.cpp 
-
-cppp.o: cppp.cpp
-	$(CXX) $(FLAGS) -c cppp.cpp 
+test.o: test.cpp
+	$(CXX) $(FLAGS) -c test.cpp 
 
 clean:
 	rm test *.o 
